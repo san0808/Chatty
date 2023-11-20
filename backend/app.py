@@ -16,7 +16,7 @@ class Query(BaseModel):
 
 # Initialize and load your components
 def init_components():
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
     # Load data from URLs
     urls = [
