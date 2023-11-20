@@ -5,13 +5,10 @@ from pytrends.request import TrendReq
 import openai
 import os
 from langchain.llms import OpenAI
-llm = OpenAI(openai_api_key="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")
+api_key = os.getenv("OPENAI_API_KEY")
+llm = OpenAI(openai_api_key=api_key)
 
 app = FastAPI()
-
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-# openai.api_key ="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"
-
 class TopicRequest(BaseModel):
     topic: str
 
